@@ -307,9 +307,9 @@ iD.modes.Save = function(context) {
     };
 
     mode.enter = function() {
-        context.connection().authenticate(function() {
+        //context.connection().authenticate(function() {
             context.ui().sidebar.show(ui);
-        });
+        //});
     };
 
     mode.exit = function() {

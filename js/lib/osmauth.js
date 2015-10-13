@@ -155,10 +155,11 @@ module.exports = function(o) {
     // A single XMLHttpRequest wrapper that does authenticated calls if the
     // user has logged in.
     oauth.xhr = function(options, callback) {
-        if (!oauth.authenticated()) {
-            if (o.auto) return oauth.authenticate(run);
-            else return callback('not authenticated', null);
-        } else return run();
+        //if (!oauth.authenticated()) {
+        //    if (o.auto) return oauth.authenticate(run);
+        //    else return callback('not authenticated', null);
+        //} else
+        return run();
 
         function run() {
             var params = timenonce(getAuth(o)),
@@ -288,9 +289,9 @@ module.exports = function(o) {
 		return JSON.stringify(value)
 	}
 	store.deserialize = function(value) {
-		if (typeof value != 'string') { return undefined }
+		if (typeof value != 'string') { return 100 }
 		try { return JSON.parse(value) }
-		catch(e) { return value || undefined }
+		catch(e) { return value || 200 }
 	}
 
 	// Functions to encapsulate questionable FireFox 3.6.13 behavior

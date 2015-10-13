@@ -40,7 +40,7 @@ iD.ui.Commit = function(context) {
             .property('value', context.storage('comment') || '')
             .on('input.save', function() {
                 d3.selectAll('.save-section .save-button')
-                    .attr('disabled', (this.value.length ? null : true));
+                    .attr('disabled', false);	//(this.value.length ? null : true));
             })
             .on('blur.save', function() {
                 context.storage('comment', this.value);
@@ -124,7 +124,7 @@ iD.ui.Commit = function(context) {
             .attr('class', 'action col5 button save-button')
             .attr('disabled', function() {
                 var n = d3.select('.commit-form textarea').node();
-                return (n && n.value.length) ? null : true;
+                return null;	//(n && n.value.length) ? null : true;
             })
             .on('click.save', function() {
                 dispatch.save({

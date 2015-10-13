@@ -5,13 +5,13 @@ iD.Connection = function(useHttps) {
 
     var event = d3.dispatch('authenticating', 'authenticated', 'auth', 'loading', 'loaded'),
         protocol = useHttps ? 'https:' : 'http:',
-        url = protocol + '//www.openstreetmap.org',
+        url = protocol + '//52.29.35.28:1180',
         connection = {},
         inflight = {},
         loadedTiles = {},
         tileZoom = 16,
         oauth = osmAuth({
-            url: protocol + '//www.openstreetmap.org',
+            url: protocol + '//52.29.35.28:1180',
             oauth_consumer_key: '5A043yRSEugj4DJ5TljuapfnrflWDte8jTOcWLlT',
             oauth_secret: 'aB3jKq1TRsCOUrfOIZ6oQMEDmv2ptV76PA54NGLL',
             loading: authenticating,
@@ -148,8 +148,8 @@ iD.Connection = function(useHttps) {
             return new iD.Node({
                 id: iD.Entity.id.fromOSM(nodeStr, attrs.id.value),
                 loc: getLoc(attrs),
-                version: attrs.version.value,
-                user: attrs.user && attrs.user.value,
+                //version: attrs.version.value,
+                //user: attrs.user && attrs.user.value,
                 tags: getTags(obj),
                 visible: getVisible(attrs)
             });
@@ -159,8 +159,8 @@ iD.Connection = function(useHttps) {
             var attrs = obj.attributes;
             return new iD.Way({
                 id: iD.Entity.id.fromOSM(wayStr, attrs.id.value),
-                version: attrs.version.value,
-                user: attrs.user && attrs.user.value,
+                //version: attrs.version.value,
+                //user: attrs.user && attrs.user.value,
                 tags: getTags(obj),
                 nodes: getNodes(obj),
                 visible: getVisible(attrs)
@@ -171,8 +171,8 @@ iD.Connection = function(useHttps) {
             var attrs = obj.attributes;
             return new iD.Relation({
                 id: iD.Entity.id.fromOSM(relationStr, attrs.id.value),
-                version: attrs.version.value,
-                user: attrs.user && attrs.user.value,
+                //version: attrs.version.value,
+                //user: attrs.user && attrs.user.value,
                 tags: getTags(obj),
                 members: getMembers(obj),
                 visible: getVisible(attrs)
