@@ -5,13 +5,13 @@ iD.Connection = function(useHttps) {
 
     var event = d3.dispatch('authenticating', 'authenticated', 'auth', 'loading', 'loaded'),
         protocol = useHttps ? 'https:' : 'http:',
-        url = protocol + '//52.29.35.28:1180',
+        url = protocol + '//localhost:1180',
         connection = {},
         inflight = {},
         loadedTiles = {},
         tileZoom = 16,
         oauth = osmAuth({
-            url: protocol + '//52.29.35.28:1180',
+            url: protocol + '//localhost:1180',
             oauth_consumer_key: '5A043yRSEugj4DJ5TljuapfnrflWDte8jTOcWLlT',
             oauth_secret: 'aB3jKq1TRsCOUrfOIZ6oQMEDmv2ptV76PA54NGLL',
             loading: authenticating,

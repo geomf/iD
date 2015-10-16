@@ -85,7 +85,7 @@ button,
 .opacity-options li,
 .radial-menu-item {
     cursor: pointer; /* Opera */
-    cursor: url(img/cursor-pointer.png) 6 1, pointer; /* FF */
+    cursor: url(../dist/img/cursor-pointer.png) 6 1, pointer; /* FF */
 }
 
 h2 {
@@ -309,7 +309,7 @@ li.hide {
 }
 
 .loading {
-    background: url(img/loader_bg.gif);
+    background: url(../dist/img/loader_bg.gif);
     background-size:5px 5px;
 }
 
@@ -485,7 +485,7 @@ button.save.has-count .count::before {
   vertical-align:top;
   width:20px;
   height:20px;
-  background:transparent url(img/sprite.svg) no-repeat 0 0;
+  background:transparent url(../dist/img/sprite.svg) no-repeat 0 0;
   text-indent:-9999px;
   overflow:hidden;
   }
@@ -986,7 +986,7 @@ a:hover .icon.out-link   { background-position: -500px -14px;}
     height: 45px;
     width: 45px;
     position: absolute;
-    background:transparent url(img/sprite.svg) no-repeat 0 -80px;
+    background:transparent url(../dist/img/sprite.svg) no-repeat 0 -80px;
 }
 
 /* preset form basics */
@@ -1638,7 +1638,7 @@ button.minor.tag-reference-loading {
 }
 
 .tag-reference-loading .icon {
-    background-image: url(img/mini-loader.gif);
+    background-image: url(../dist/img/mini-loader.gif);
     background-position: 0 0;
 }
 
@@ -1956,7 +1956,7 @@ div.full-screen > button:hover {
 }
 
 .opacity-options {
-    background: url(img/background-pattern-opacity.png) 0 0 repeat;
+    background: url(../dist/img/background-pattern-opacity.png) 0 0 repeat;
     height:20px;
     width:82px;
     position: absolute;
@@ -2486,7 +2486,7 @@ div.full-screen > button:hover {
     max-width: 100px;
     margin: auto;
     margin-bottom: 10px;
-    background:transparent url(img/sprite.svg) no-repeat 0 -220px;
+    background:transparent url(../dist/img/sprite.svg) no-repeat 0 -220px;
 }
 
 .modal-actions :first-child {
@@ -3077,7 +3077,7 @@ div.full-screen > button:hover {
     content: "";
     height: 80px;
     width: 200px;
-    background:transparent url(img/sprite.svg) no-repeat 0 -320px;
+    background:transparent url(../dist/img/sprite.svg) no-repeat 0 -320px;
 }
 
 .intro-areas-add .tooltip-inner::before {
@@ -3097,6 +3097,6 @@ div.full-screen > button:hover {
 .huge-modal-button .illustration {
     height: 100px;
     width: 100px;
-    background: rgba(0, 0, 0, 0) url(img/sprite.svg) no-repeat -400px -220px;
+    background: rgba(0, 0, 0, 0) url(../dist/img/sprite.svg) no-repeat -400px -220px;
     margin: auto;
 }
