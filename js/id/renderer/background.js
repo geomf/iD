@@ -236,8 +236,6 @@ iD.Background = function(context) {
             }
         });
 
-        backgroundSources.unshift(iD.BackgroundSource.None());
-
         var q = iD.util.stringQs(location.hash.substring(1)),
             chosen = q.background || q.layer;
 

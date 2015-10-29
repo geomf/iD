@@ -78,31 +78,13 @@ iD.taginfo = function() {
     taginfo.keys = function(parameters, callback) {
         var debounce = parameters.debounce;
         parameters = clean(setSort(parameters));
-        request(endpoint + 'keys/all?' +
-            iD.util.qsString(_.extend({
-                rp: 10,
-                sortname: 'count_all',
-                sortorder: 'desc',
-                page: 1
-            }, parameters)), debounce, function(err, d) {
-                if (err) return callback(err);
-                callback(null, d.data.filter(popularKeys(parameters)).map(valKey));
-            });
+        callback(null, [{"value":"power"}])
     };
 
     taginfo.values = function(parameters, callback) {
         var debounce = parameters.debounce;
         parameters = clean(setSort(setFilter(parameters)));
-        request(endpoint + 'key/values?' +
-            iD.util.qsString(_.extend({
-                rp: 25,
-                sortname: 'count_all',
-                sortorder: 'desc',
-                page: 1
-            }, parameters)), debounce, function(err, d) {
-                if (err) return callback(err);
-                callback(null, d.data.filter(popularValues()).map(valKeyDescription), parameters);
-            });
+        callback(null, [{"value":"transformer"}, {"value":"fuse"}, {"value":"regulator"}, {"value":"overhead_line"}, {"value":"underground_line"}, {"value":"triplex_node"}, {"value":"node"}, {"value":"triplex_meter"}], parameters)
     };
 
     taginfo.docs = function(parameters, callback) {

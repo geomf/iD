@@ -6887,22 +6887,116 @@
         "searchable": false,
         "name": "Power"
     },
-    "power/generator": {
+    "power/fuse": {
         "fields": [
-            "operator",
-            "generator/source",
-            "generator/method",
-            "generator/type"
+            "power/phases",
+            "power/currnet_limit"
+        ],
+        "geometry": [
+            "line"
+        ],
+        "tags": {
+            "power": "fuse"
+        },
+        "name": "Fuse"
+    },
+    "power/transformer": {
+        "fields": [
+            "power/phases"
+        ],
+        "geometry": [
+            "line"
+        ],
+        "tags": {
+            "power": "transformer"
+        },
+        "name": "Transformer"
+    },
+    "power/regulator": {
+        "geometry": [
+            "line"
+        ],
+        "tags": {
+            "power": "regulator"
+        },
+        "name": "Regulator"
+    },
+    "power/switch": {
+        "geometry": [
+            "line"
+        ],
+        "tags": {
+            "power": "switch"
+        },
+        "name": "Switch"
+    },
+    "power/overhead_line": {
+        "fields": [
+            "power/phases",
+            "power/length"
+        ],
+        "geometry": [
+            "line"
+        ],
+        "tags": {
+            "power": "overhead_line"
+        },
+        "name": "Overhead Line"
+    },
+    "power/underground_line": {
+        "fields": [
+            "power/phases",
+            "power/length"
+        ],
+        "geometry": [
+            "line"
+        ],
+        "tags": {
+            "power": "underground_line"
+        },
+        "name": "Underground Line"
+    },
+    "power/triplex_node": {
+        "fields": [
+            "power/phases",
+            "power/nominal_voltage"
         ],
         "geometry": [
             "point",
-            "vertex",
-            "area"
+            "vertex"
         ],
         "tags": {
-            "power": "generator"
+            "power": "triplex_node"
         },
-        "name": "Power Generator"
+        "name": "Triplex Node"
+    },
+    "power/node": {
+        "fields": [
+            "power/phases",
+            "power/nominal_voltage"
+        ],
+        "geometry": [
+            "point",
+            "vertex"
+        ],
+        "tags": {
+            "power": "node"
+        },
+        "name": "Node"
+    },
+    "power/triplex_meter": {
+        "fields": [
+            "power/phases",
+            "power/nominal_voltage"
+        ],
+        "geometry": [
+            "point",
+            "vertex"
+        ],
+        "tags": {
+            "power": "triplex_meter"
+        },
+        "name": "Triplex Meter"
     },
     "power/line": {
         "geometry": [
@@ -6921,7 +7015,7 @@
         "tags": {
             "power": "minor_line"
         },
-        "name": "Minor Power Line",
+        "name": "Minor Power Line zxcvb",
         "icon": "power-line"
     },
     "power/pole": {
@@ -6973,17 +7067,6 @@
         },
         "name": "High-Voltage Tower"
     },
-    "power/transformer": {
-        "geometry": [
-            "point",
-            "vertex",
-            "area"
-        ],
-        "tags": {
-            "power": "transformer"
-        },
-        "name": "Transformer"
-    },
     "public_transport/platform": {
         "fields": [
             "ref",
@@ -7016,244 +7099,6 @@
             "public_transport": "stop_position"
         },
         "name": "Stop Position"
-    },
-    "railway": {
-        "fields": [
-            "railway"
-        ],
-        "geometry": [
-            "point",
-            "vertex",
-            "line",
-            "area"
-        ],
-        "tags": {
-            "railway": "*"
-        },
-        "searchable": false,
-        "name": "Railway"
-    },
-    "railway/abandoned": {
-        "icon": "railway-abandoned",
-        "geometry": [
-            "line"
-        ],
-        "tags": {
-            "railway": "abandoned"
-        },
-        "fields": [
-            "structure",
-            "service_rail"
-        ],
-        "terms": [],
-        "name": "Abandoned Railway"
-    },
-    "railway/disused": {
-        "icon": "railway-disused",
-        "geometry": [
-            "line"
-        ],
-        "tags": {
-            "railway": "disused"
-        },
-        "fields": [
-            "structure",
-            "service_rail"
-        ],
-        "terms": [],
-        "name": "Disused Railway"
-    },
-    "railway/funicular": {
-        "geometry": [
-            "line"
-        ],
-        "terms": [
-            "venicular",
-            "cliff railway",
-            "cable car",
-            "cable railway",
-            "funicular railway"
-        ],
-        "fields": [
-            "structure",
-            "gauge",
-            "service_rail"
-        ],
-        "tags": {
-            "railway": "funicular"
-        },
-        "icon": "railway-rail",
-        "name": "Funicular"
-    },
-    "railway/halt": {
-        "icon": "rail",
-        "geometry": [
-            "point",
-            "vertex"
-        ],
-        "tags": {
-            "railway": "halt"
-        },
-        "name": "Railway Halt",
-        "terms": [
-            "break",
-            "interrupt",
-            "rest",
-            "wait",
-            "interruption"
-        ]
-    },
-    "railway/level_crossing": {
-        "icon": "cross",
-        "geometry": [
-            "vertex"
-        ],
-        "tags": {
-            "railway": "level_crossing"
-        },
-        "terms": [
-            "crossing",
-            "railroad crossing",
-            "level crossing",
-            "grade crossing",
-            "road through railroad",
-            "train crossing"
-        ],
-        "name": "Railway Crossing"
-    },
-    "railway/monorail": {
-        "icon": "railway-monorail",
-        "geometry": [
-            "line"
-        ],
-        "tags": {
-            "railway": "monorail"
-        },
-        "fields": [
-            "structure",
-            "electrified",
-            "service_rail"
-        ],
-        "terms": [],
-        "name": "Monorail"
-    },
-    "railway/narrow_gauge": {
-        "icon": "railway-rail",
-        "geometry": [
-            "line"
-        ],
-        "tags": {
-            "railway": "narrow_gauge"
-        },
-        "fields": [
-            "structure",
-            "gauge",
-            "electrified",
-            "service_rail"
-        ],
-        "terms": [
-            "narrow gauge railway",
-            "narrow gauge railroad"
-        ],
-        "name": "Narrow Gauge Rail"
-    },
-    "railway/platform": {
-        "geometry": [
-            "point",
-            "vertex",
-            "line",
-            "area"
-        ],
-        "tags": {
-            "railway": "platform"
-        },
-        "name": "Railway Platform"
-    },
-    "railway/rail": {
-        "icon": "railway-rail",
-        "geometry": [
-            "line"
-        ],
-        "tags": {
-            "railway": "rail"
-        },
-        "fields": [
-            "structure",
-            "gauge",
-            "electrified",
-            "service_rail"
-        ],
-        "terms": [],
-        "name": "Rail"
-    },
-    "railway/station": {
-        "icon": "rail",
-        "fields": [
-            "network",
-            "operator",
-            "address",
-            "building_area"
-        ],
-        "geometry": [
-            "point",
-            "vertex",
-            "area"
-        ],
-        "tags": {
-            "railway": "station"
-        },
-        "terms": [
-            "train station",
-            "station"
-        ],
-        "name": "Railway Station"
-    },
-    "railway/subway": {
-        "icon": "railway-subway",
-        "geometry": [
-            "line"
-        ],
-        "tags": {
-            "railway": "subway"
-        },
-        "fields": [
-            "structure",
-            "gauge",
-            "electrified",
-            "service_rail"
-        ],
-        "terms": [],
-        "name": "Subway"
-    },
-    "railway/subway_entrance": {
-        "icon": "rail-metro",
-        "geometry": [
-            "point"
-        ],
-        "tags": {
-            "railway": "subway_entrance"
-        },
-        "terms": [],
-        "name": "Subway Entrance"
-    },
-    "railway/tram": {
-        "icon": "railway-light-rail",
-        "geometry": [
-            "line"
-        ],
-        "tags": {
-            "railway": "tram"
-        },
-        "fields": [
-            "structure",
-            "gauge",
-            "electrified",
-            "service_rail"
-        ],
-        "terms": [
-            "streetcar"
-        ],
-        "name": "Tram"
     },
     "relation": {
         "name": "Relation",

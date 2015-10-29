@@ -11,34 +11,21 @@
         "area"
     ],
     "line": [
-        "category-road",
-        "category-rail",
-        "category-path",
-        "category-water-line",
-        "power/line",
-        "line"
+        "power/fuse",
+        "power/transformer",
+        "power/regulator",
+        "power/overhead_line",
+        "power/underground_line"
     ],
     "point": [
-        "leisure/park",
-        "amenity/hospital",
-        "amenity/place_of_worship",
-        "amenity/cafe",
-        "amenity/restaurant",
-        "amenity/fast_food",
-        "amenity/bar",
-        "amenity/bank",
-        "shop/supermarket",
-        "point"
+        "power/triplex_node",
+        "power/node",
+        "power/triplex_meter"
     ],
     "vertex": [
-        "highway/crosswalk",
-        "highway/crossing",
-        "railway/level_crossing",
-        "highway/traffic_signals",
-        "highway/turning_circle",
-        "highway/mini_roundabout",
-        "highway/motorway_junction",
-        "vertex"
+        "power/triplex_node",
+        "power/node",
+        "power/triplex_meter"
     ],
     "relation": [
         "category-route",

@@ -969,6 +969,26 @@
         "type": "check",
         "label": "Power Supply"
     },
+    "power/phases": {
+        "key": "power:phases",
+        "type": "text",
+        "label": "Phases"
+    },
+    "power/currnet_limit": {
+        "key": "power:currnet_limit",
+        "type": "text",
+        "label": "Currnet Limit"
+    },
+    "power/length": {
+        "key": "power:length",
+        "type": "text",
+        "label": "Length"
+    },
+    "power/nominal_voltage": {
+        "key": "power:nominal_voltage",
+        "type": "text",
+        "label": "Nominal Voltage"
+    },
     "railway": {
         "key": "railway",
         "type": "typeCombo",

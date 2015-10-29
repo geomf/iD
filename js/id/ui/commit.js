@@ -25,30 +25,6 @@ iD.ui.Commit = function(context) {
         var body = selection.append('div')
             .attr('class', 'body');
 
-
-        // Comment Section
-        var commentSection = body.append('div')
-            .attr('class', 'modal-section form-field commit-form');
-
-        commentSection.append('label')
-            .attr('class', 'form-label')
-            .text(t('commit.message_label'));
-
-        var commentField = commentSection.append('textarea')
-            .attr('placeholder', t('commit.description_placeholder'))
-            .attr('maxlength', 255)
-            .property('value', context.storage('comment') || '')
-            .on('input.save', function() {
-                d3.selectAll('.save-section .save-button')
-                    .attr('disabled', false);	//(this.value.length ? null : true));
-            })
-            .on('blur.save', function() {
-                context.storage('comment', this.value);
-            });
-
-        commentField.node().select();
-
-
         // Warnings
         var warnings = body.selectAll('div.warning-section')
             .data([context.history().validate(changes)])

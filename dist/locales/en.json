@@ -240,8 +240,8 @@
         "title": "Save Changes",
         "description_placeholder": "Brief description of your contributions",
         "message_label": "Changeset comment",
-        "upload_explanation": "The changes you upload will be visible on all maps that use OpenStreetMap data.",
-        "upload_explanation_with_user": "The changes you upload as {user} will be visible on all maps that use OpenStreetMap data.",
+        "upload_explanation": "Are you sure you want to save changes?",
+        "upload_explanation_with_user": "Are you sure you want to save changes?",
         "save": "Save",
         "cancel": "Cancel",
         "changes": "{count} Changes",
@@ -1212,6 +1212,18 @@
             },
             "power_supply": {
                 "label": "Power Supply"
+            },
+            "power/phases": {
+                "label": "Phases"
+            },
+            "power/currnet_limit": {
+                "label": "Currnet Limit"
+            },
+            "power/length": {
+                "label": "Length"
+            },
+            "power/nominal_voltage": {
+                "label": "Nominal Voltage"
             },
             "railway": {
                 "label": "Type"
@@ -3098,8 +3110,40 @@
                 "name": "Power",
                 "terms": ""
             },
-            "power/generator": {
-                "name": "Power Generator",
+            "power/fuse": {
+                "name": "Fuse",
+                "terms": ""
+            },
+            "power/transformer": {
+                "name": "Transformer",
+                "terms": ""
+            },
+            "power/regulator": {
+                "name": "Regulator",
+                "terms": ""
+            },
+            "power/switch": {
+                "name": "Switch",
+                "terms": ""
+            },
+            "power/overhead_line": {
+                "name": "Overhead Line",
+                "terms": ""
+            },
+            "power/underground_line": {
+                "name": "Underground Line",
+                "terms": ""
+            },
+            "power/triplex_node": {
+                "name": "Triplex Node",
+                "terms": ""
+            },
+            "power/node": {
+                "name": "Node",
+                "terms": ""
+            },
+            "power/triplex_meter": {
+                "name": "Triplex Meter",
                 "terms": ""
             },
             "power/line": {
@@ -3124,10 +3168,6 @@
             },
             "power/tower": {
                 "name": "High-Voltage Tower",
-                "terms": ""
-            },
-            "power/transformer": {
-                "name": "Transformer",
                 "terms": ""
             },
             "public_transport/platform": {

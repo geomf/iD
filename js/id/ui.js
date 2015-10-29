@@ -76,79 +76,12 @@ iD.ui = function(context) {
             .call(iD.ui.Zoom(context));
 
         controls.append('div')
-            .attr('class', 'map-control geolocate-control')
-            .call(iD.ui.Geolocate(map));
-
-        controls.append('div')
             .attr('class', 'map-control background-control')
             .call(iD.ui.Background(context));
 
         controls.append('div')
             .attr('class', 'map-control map-data-control')
             .call(iD.ui.MapData(context));
-
-        controls.append('div')
-            .attr('class', 'map-control help-control')
-            .call(iD.ui.Help(context));
-
-        var about = content.append('div')
-            .attr('id', 'about');
-
-        about.append('div')
-            .attr('id', 'attrib')
-            .call(iD.ui.Attribution(context));
-
-        var footer = about.append('div')
-            .attr('id', 'footer')
-            .attr('class', 'fillD');
-
-        footer.append('div')
-            .attr('class', 'api-status')
-            .call(iD.ui.Status(context));
-
-        footer.append('div')
-            .attr('id', 'scale-block')
-            .call(iD.ui.Scale(context));
-
-        var aboutList = footer.append('div')
-            .attr('id', 'info-block')
-            .append('ul')
-            .attr('id', 'about-list');
-
-        if (!context.embed()) {
-            aboutList.call(iD.ui.Account(context));
-        }
-
-        aboutList.append('li')
-            .append('a')
-            .attr('target', '_blank')
-            .attr('tabindex', -1)
-            .attr('href', 'http://github.com/openstreetmap/iD')
-            .text(iD.version);
-
-        var bugReport = aboutList.append('li')
-            .append('a')
-            .attr('target', '_blank')
-            .attr('tabindex', -1)
-            .attr('href', 'https://github.com/openstreetmap/iD/issues');
-
-        bugReport.append('span')
-            .attr('class','icon bug light');
-
-        bugReport.call(bootstrap.tooltip()
-                .title(t('report_a_bug'))
-                .placement('top')
-            );
-
-        aboutList.append('li')
-            .attr('class', 'feature-warning')
-            .attr('tabindex', -1)
-            .call(iD.ui.FeatureInfo(context));
-
-        aboutList.append('li')
-            .attr('class', 'user-list')
-            .attr('tabindex', -1)
-            .call(iD.ui.Contributors(context));
 
         window.onbeforeunload = function() {
             return context.save();
