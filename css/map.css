@@ -869,6 +869,26 @@ path.stroke.tag-power {
     stroke: #939393;
     stroke-width: 2;
 }
+path.stroke.tag-power-overhead_line {
+    stroke: #b3b3b3;
+    stroke-width: 6;
+}
+path.stroke.tag-power-underground_line {
+    stroke: #636363;
+    stroke-width: 4;
+}
+path.stroke.tag-power-switch {
+    stroke: #b30000;
+    stroke-width: 2;
+}
+path.stroke.tag-power-fuse {
+    stroke: #00b300;
+    stroke-width: 2;
+}
+path.stroke.tag-power-transformer {
+    stroke: #0000b3;
+    stroke-width: 2;
+}
 path.casing.tag-power {
     stroke: none;
 }
