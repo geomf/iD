@@ -83,8 +83,20 @@ iD.taginfo = function() {
 
     taginfo.values = function(parameters, callback) {
         var debounce = parameters.debounce;
-        parameters = clean(setSort(setFilter(parameters)));
-        callback(null, [{"value":"transformer"}, {"value":"fuse"}, {"value":"regulator"}, {"value":"overhead_line"}, {"value":"underground_line"}, {"value":"triplex_node"}, {"value":"node"}, {"value":"triplex_meter"}], parameters)
+        if (parameters.geometry == "line"){
+            if (parameters.key == "power"){
+                callback(null, [{"value":"transformer"}, {"value":"fuse"}, {"value":"regulator"}, {"value":"overhead_line"}, {"value":"underground_line"}, {"value":"triplex_node"}, {"value":"node"}, {"value":"triplex_meter"}], parameters);
+            }
+            else if (parameters.key == "oneway"){
+                callback(null, [{"value":"yes"}, {"value":"no"}], parameters);
+            }
+        } else if (parameters.geometry == "point"){
+            if (parameters.key == "power"){
+                callback(null, [{"value":"triplex_node"}, {"value":"node"}, {"value":"triplex_meter"}], parameters);
+            }
+        } else {
+            callback(null, [{}], parameters);
+        }
     };
 
     taginfo.docs = function(parameters, callback) {
