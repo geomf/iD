@@ -104,7 +104,7 @@ iD.ui.Commit = function(context) {
             })
             .on('click.save', function() {
                 dispatch.save({
-                    comment: commentField.node().value
+                    comment: "empty"
                 });
             });
 
