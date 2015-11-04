@@ -380,7 +380,7 @@ iD.version = '1.7.5-idiot.intel.lawyers';
     // Added due to incomplete svg style support. See #715
     detected.opera = (detected.browser.toLowerCase() === 'opera' && parseFloat(detected.version) < 15 );
 
-    detected.locale = navigator.language || navigator.userLanguage || 'en-US';
+    detected.locale = 'en-US';
 
     detected.filedrop = (window.FileReader && 'ondrop' in window);
 

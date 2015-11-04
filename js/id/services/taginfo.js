@@ -83,17 +83,11 @@ iD.taginfo = function() {
 
     taginfo.values = function(parameters, callback) {
         var debounce = parameters.debounce;
-        if (parameters.geometry == "line"){
-            if (parameters.key == "power"){
-                callback(null, [{"value":"transformer"}, {"value":"fuse"}, {"value":"regulator"}, {"value":"overhead_line"}, {"value":"underground_line"}, {"value":"triplex_node"}, {"value":"node"}, {"value":"triplex_meter"}], parameters);
-            }
-            else if (parameters.key == "oneway"){
-                callback(null, [{"value":"yes"}, {"value":"no"}], parameters);
-            }
-        } else if (parameters.geometry == "point"){
-            if (parameters.key == "power"){
-                callback(null, [{"value":"triplex_node"}, {"value":"node"}, {"value":"triplex_meter"}], parameters);
-            }
+        if (parameters.key == "power") {
+            callback(null, [{"value":"transformer"}, {"value":"fuse"}, {"value":"regulator"}, {"value":"overhead_line"}, {"value":"underground_line"}, {"value":"triplex_node"}, {"value":"node"}, {"value":"triplex_meter"}, {"value":"triplex_node"}, {"value":"node"}, {"value":"triplex_meter"}], parameters);
+        }
+        else if (parameters.key == "oneway") {
+            callback(null, [{"value":"yes"}, {"value":"no"}], parameters);
         } else {
             callback(null, [{}], parameters);
         }

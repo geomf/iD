@@ -51,9 +51,6 @@ iD.ui.Inspector = function(context) {
         $footer.enter().append('div')
             .attr('class', 'footer');
 
-        selection.select('.footer')
-            .call(iD.ui.ViewOnOSM(context)
-                .entityID(entityID));
 
         function showList(preset) {
             $wrap.transition()

@@ -266,30 +266,18 @@ iD.Connection = function(useHttps) {
     };
 
     connection.putChangeset = function(changes, comment, imageryUsed, callback) {
-        oauth.xhr({
-                method: 'PUT',
-                path: '/api/0.6/changeset/create',
-                options: { header: { 'Content-Type': 'text/xml' } },
-                content: JXON.stringify(connection.changesetJXON(connection.changesetTags(comment, imageryUsed)))
-            }, function(err, changeset_id) {
-                if (err) return callback(err);
                 oauth.xhr({
                     method: 'POST',
-                    path: '/api/0.6/changeset/' + changeset_id + '/upload',
+                    path: '/api/0.6/changeset/upload',
                     options: { header: { 'Content-Type': 'text/xml' } },
-                    content: JXON.stringify(connection.osmChangeJXON(changeset_id, changes))
+                    content: JXON.stringify(connection.osmChangeJXON('', changes))
                 }, function(err) {
                     if (err) return callback(err);
                     // POST was successful, safe to call the callback.
                     // Still attempt to close changeset, but ignore response because #2667
                     // Add delay to allow for postgres replication #1646 #2678
-                    window.setTimeout(function() { callback(null, changeset_id); }, 2500);
-                    oauth.xhr({
-                        method: 'PUT',
-                        path: '/api/0.6/changeset/' + changeset_id + '/close'
-                    }, d3.functor(true));
+                    window.setTimeout(function() { callback(null, ''); }, 2500);
                 });
-            });
     };
 
     connection.userDetails = function(callback) {
@@ -318,7 +306,7 @@ iD.Connection = function(useHttps) {
             callback(undefined, userDetails);
         }
 
-        oauth.xhr({ method: 'GET', path: '/api/0.6/user/details' }, done);
+        //oauth.xhr({ method: 'GET', path: '/api/0.6/user/details' }, done);
     };
 
     connection.status = function(callback) {

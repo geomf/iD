@@ -25,28 +25,6 @@ iD.ui.Success = function(context) {
             .html(t('success.help_html'));
 
         var changesetURL = context.connection().changesetURL(changeset.id);
-
-        body.append('a')
-            .attr('class', 'button col12 osm')
-            .attr('target', '_blank')
-            .attr('href', changesetURL)
-            .text(t('success.view_on_osm'));
-
-        var sharing = {
-            facebook: 'https://facebook.com/sharer/sharer.php?u=' + encodeURIComponent(changesetURL),
-            twitter: 'https://twitter.com/intent/tweet?source=webclient&text=' + encodeURIComponent(message),
-            google: 'https://plus.google.com/share?url=' + encodeURIComponent(changesetURL)
-        };
-
-        body.selectAll('.button.social')
-            .data(d3.entries(sharing))
-            .enter().append('a')
-            .attr('class', function(d) { return 'button social col4 ' + d.key; })
-            .attr('target', '_blank')
-            .attr('href', function(d) { return d.value; })
-            .call(bootstrap.tooltip()
-                .title(function(d) { return t('success.' + d.key); })
-                .placement('bottom'));
     }
 
     success.changeset = function(_) {

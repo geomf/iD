@@ -1,6 +1,7 @@
 [
     {
         "name": "Feeder",
+        "id": "Feeder",
         "type": "tms",
         "description": "Shows major features to help orient you.",
         "template": "http://52.30.29.154/osm_tiles2/{zoom}/{x}/{y}.png",
@@ -9,9 +10,23 @@
             16
         ],
         "overzoom": false,
-        "terms_url": "http://www.mapbox.com/about/maps/",
         "terms_text": "Terms & Feedback",
         "default": true,
         "overlay": true
+    },
+    {
+        "name": "ModTile",
+        "id": "ModTile",
+        "type": "tms",
+        "description": "Shows major features to help orient you.",
+        "template": "http://52.30.29.154/osm_tiles/{zoom}/{x}/{y}.png",
+        "scaleExtent": [
+            0,
+            22
+        ],
+        "overzoom": false,
+        "terms_text": "Terms & Feedback",
+        "default": true,
+        "overlay": false
     }
 ]

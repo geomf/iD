@@ -1,8 +1,7 @@
 iD.ui.Modes = function(context) {
     var modes = [
         iD.modes.AddPoint(context),
-        iD.modes.AddLine(context),
-        iD.modes.AddArea(context)];
+        iD.modes.AddLine(context)];
 
     function editable() {
         return context.editable() && context.mode().id !== 'save';
