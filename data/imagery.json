@@ -4,7 +4,7 @@
         "id": "Feeder",
         "type": "tms",
         "description": "Shows major features to help orient you.",
-        "template": "http://52.30.29.154/osm_tiles2/{zoom}/{x}/{y}.png",
+        "template": "https://52.30.29.154/osm_tiles2/{zoom}/{x}/{y}.png",
         "scaleExtent": [
             0,
             16
@@ -19,7 +19,7 @@
         "id": "ModTile",
         "type": "tms",
         "description": "Shows major features to help orient you.",
-        "template": "http://52.30.29.154/osm_tiles/{zoom}/{x}/{y}.png",
+        "template": "https://52.30.29.154/osm_tiles/{zoom}/{x}/{y}.png",
         "scaleExtent": [
             0,
             22
