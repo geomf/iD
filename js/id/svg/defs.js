@@ -39,12 +39,21 @@ iD.svg.Defs = function(context) {
                 viewBox: '0 0 10 10',
                 refY: 2.5,
                 refX: 5,
-                markerWidth: 2,
+                markerWidth: 10,
                 markerHeight: 2,
                 orient: 'auto'
             })
             .append('path')
-            .attr('d', 'M 5 3 L 0 3 L 0 2 L 5 2 L 5 0 L 10 2.5 L 5 5 z');
+            .attr('d', 'M 5 3 L 0 3 L 0 2 L 5 2 L 5 0 L 10 2.5 L 5 5 z')
+            .append('animateTransform')
+            .attr({
+                attributeName: "transform",
+                type: "translate",
+                from: "-20 0 0",
+                to: "10 0 0",
+                dur: '0.8s',
+                repeatCount: "indefinite"
+            })
 
         var patterns = defs.selectAll('pattern')
             .data([
