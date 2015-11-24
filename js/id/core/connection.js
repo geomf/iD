@@ -4,14 +4,14 @@ iD.Connection = function(useHttps) {
     }
 
     var event = d3.dispatch('authenticating', 'authenticated', 'auth', 'loading', 'loaded'),
-        protocol =  'http:',
-        url = protocol + '//52.30.106.1:3000',
+        protocol =  'https:',
+        url = protocol + '//ros.hutchpcn15.infra-host.com',
         connection = {},
         inflight = {},
         loadedTiles = {},
         tileZoom = 16,
         oauth = osmAuth({
-            url: protocol + '//52.30.106.1:3000',
+            url: protocol + '//ros.hutchpcn15.infra-host.com',
             oauth_consumer_key: '5A043yRSEugj4DJ5TljuapfnrflWDte8jTOcWLlT',
             oauth_secret: 'aB3jKq1TRsCOUrfOIZ6oQMEDmv2ptV76PA54NGLL',
             loading: authenticating,
