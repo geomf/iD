@@ -24,7 +24,8 @@ iD.Connection = function(useHttps) {
         wayStr = 'way',
         relationStr = 'relation',
         userDetails,
-        off;
+        off,
+        omfUrl = "https://"+window.location.hostname;
 
 
     connection.changesetURL = function(changesetId) {
@@ -266,18 +267,25 @@ iD.Connection = function(useHttps) {
     };
 
     connection.putChangeset = function(changes, comment, imageryUsed, callback) {
-                oauth.xhr({
-                    method: 'POST',
-                    path: '/api/0.6/changeset/upload',
-                    options: { header: { 'Content-Type': 'text/xml' } },
-                    content: JXON.stringify(connection.osmChangeJXON('', changes))
-                }, function(err) {
-                    if (err) return callback(err);
-                    // POST was successful, safe to call the callback.
-                    // Still attempt to close changeset, but ignore response because #2667
-                    // Add delay to allow for postgres replication #1646 #2678
-                    window.setTimeout(function() { callback(null, ''); }, 2500);
-                });
+
+        oauth.xhr({
+            method: 'POST',
+            path: '/api/0.6/changeset/upload',
+            options: { header: { 'Content-Type': 'text/xml' } },
+            content: JXON.stringify(connection.osmChangeJXON('', changes))
+        }, function(err) {
+            if (err) return callback(err);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", omfUrl+"/saveFeederGeo/3", true);
+            xhr.send();
+
+            // POST was successful, safe to call the callback.
+            // Still attempt to close changeset, but ignore response because #2667
+            // Add delay to allow for postgres replication #1646 #2678
+
+            window.setTimeout(function() { callback(null, ''); }, 2500);
+        });
     };
 
     connection.userDetails = function(callback) {
