@@ -277,7 +277,7 @@ iD.Connection = function(useHttps) {
             if (err) return callback(err);
 
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", omfUrl+"/saveFeederGeo/3", true);
+            xhr.open("POST", omfUrl+"/saveFeederGeo/1", true);
             xhr.send();
 
             // POST was successful, safe to call the callback.
