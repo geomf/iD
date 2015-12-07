@@ -267,18 +267,30 @@ iD.Connection = function(useHttps) {
     };
 
     connection.putChangeset = function(changes, comment, imageryUsed, callback) {
-
         oauth.xhr({
             method: 'POST',
             path: '/api/0.6/changeset/upload',
             options: { header: { 'Content-Type': 'text/xml' } },
             content: JXON.stringify(connection.osmChangeJXON('', changes))
-        }, function(err) {
+        }, function(err, xhr) {
             if (err) return callback(err);
 
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", omfUrl+"/saveFeederGeo/1", true);
-            xhr.send();
+            var response = xhr;
+
+            parser=new DOMParser();
+            xmlDoc=parser.parseFromString(response,"text/xml");
+
+            var feeders = xmlDoc.getElementsByTagName("feeder");
+
+            for (i = 0; i < feeders.length; i++){
+                feederId = feeders[i].id;
+
+                var xmlHttpRequest = new XMLHttpRequest();
+                xmlHttpRequest.open("POST", omfUrl+"/saveFeederGeo/" + feederId, true);
+                xmlHttpRequest.send();
+            }
+
+
 
             // POST was successful, safe to call the callback.
             // Still attempt to close changeset, but ignore response because #2667
