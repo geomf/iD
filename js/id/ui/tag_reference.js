@@ -62,18 +62,6 @@ iD.ui.TagReference = function(tag, context) {
             body
                 .append('p')
                 .text(docs.description);
-
-            var wikiLink = body
-                .append('a')
-                .attr('target', '_blank')
-                .attr('href', 'http://wiki.openstreetmap.org/wiki/' + docs.title);
-
-            wikiLink.append('span')
-                .attr('class','icon icon-pre-text out-link');
-
-            wikiLink.append('span')
-                .text(t('inspector.reference'));
-
             return true;
         });
     }
@@ -81,7 +69,6 @@ iD.ui.TagReference = function(tag, context) {
     function show() {
         loaded = true;
 
-        button.classed('tag-reference-loading', false);
 
         body.transition()
             .duration(200)
@@ -102,29 +89,6 @@ iD.ui.TagReference = function(tag, context) {
     }
 
     tagReference.button = function(selection) {
-        button = selection.selectAll('.tag-reference-button')
-            .data([0]);
-
-        var enter = button.enter().append('button')
-            .attr('tabindex', -1)
-            .attr('class', 'tag-reference-button');
-
-        enter.append('span')
-            .attr('class', 'icon inspect');
-
-        button.on('click', function () {
-            d3.event.stopPropagation();
-            d3.event.preventDefault();
-            if (showing) {
-                hide();
-            } else if (loaded) {
-                show();
-            } else {
-                if (context.taginfo()) {
-                    load();
-                }
-            }
-        });
     };
 
     tagReference.body = function(selection) {
