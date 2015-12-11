@@ -78,10 +78,10 @@ iD.ui = function(context) {
         controls.append('div')
             .attr('class', 'map-control background-control')
             .call(iD.ui.Background(context));
-
         controls.append('div')
-            .attr('class', 'map-control map-data-control')
-            .call(iD.ui.MapData(context));
+            .attr('class', 'map-control feeder-data-control')
+            .call(iD.ui.Feeder(context));
+
 
         window.onbeforeunload = function() {
             return context.save();

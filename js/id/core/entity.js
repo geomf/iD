@@ -38,6 +38,7 @@ iD.Entity.key = function(entity) {
 
 iD.Entity.prototype = {
     tags: {},
+    version: 1,
 
     initialize: function(sources) {
         for (var i = 0; i < sources.length; ++i) {

@@ -93,6 +93,26 @@ window.iD = function () {
         if (!err) history.merge(result.data, result.extent);
     }
 
+    connection.loadUserFeeders(1, function(xml) {
+        var result = xml.getElementsByTagName('feeder');
+
+        context.feeders = _.map(result, function (d) {
+            var id = d.getAttribute('id');
+            features.define(id, function isPower(entity) {
+                return entity.tags.feeder_id === id;
+            });
+            features.disable(id);
+            return {
+                'id': id,
+                'name': d.getAttribute('name')
+            }
+        });
+        if(context.feeders.length > 0) {
+            context.features().enable(context.feeders[0].id);
+        }
+        context.feedersUpdate();
+    });
+
     context.loadTiles = function(projection, dimensions, callback) {
         function done(err, result) {
             entitiesLoaded(err, result);

@@ -1794,7 +1794,7 @@ div.full-screen > button:hover {
 
 /* Background / Map Data Settings */
 
-
+.feeder-data-control button,
 .map-data-control button {
     border-radius: 0;
 }
@@ -1802,7 +1802,7 @@ div.full-screen > button:hover {
 .background-control button {
     border-radius: 4px 0 0 0;
 }
-
+.feeder-data-control,
 .map-data-control,
 .background-control {
     position: relative;
@@ -1815,7 +1815,7 @@ div.full-screen > button:hover {
 .background-control .adjustments button:last-child {
     border: 0;
 }
-
+.feeder-data-control .hide-toggle,
 .map-data-control .hide-toggle,
 .background-control .hide-toggle {
     padding-bottom: 10px;
@@ -1978,6 +1978,8 @@ div.full-screen > button:hover {
     z-index: 9999;
 }
 
+.feeder-data-control li:hover .select-box,
+.feeder-data-control li.selected .select-box,
 .map-data-control li:hover .select-box,
 .map-data-control li.selected .select-box,
 .background-control li:hover .select-box,
@@ -1987,6 +1989,8 @@ div.full-screen > button:hover {
     opacity: .5;
 }
 
+.feeder-data-control li.selected:hover .select-box,
+.feeder-data-control li.selected .select-box,
 .map-data-control li.selected:hover .select-box,
 .map-data-control li.selected .select-box,
 .background-control li.selected:hover .select-box,
@@ -2000,7 +2004,7 @@ div.full-screen > button:hover {
     width:20px;
     height:18px;
 }
-
+.feeder-data-control .layer-list button,
 .map-data-control .layer-list button,
 .background-control .layer-list button {
     float: right;
@@ -2010,16 +2014,17 @@ div.full-screen > button:hover {
     border-radius: 0;
 }
 
+.feeder-data-control .layer-list button .icon,
 .map-data-control .layer-list button .icon,
 .background-control .layer-list button .icon {
     opacity: 0.5;
 }
-
+.feeder-data-control .layer-list button:first-of-type,
 .map-data-control .layer-list button:first-of-type,
 .background-control .layer-list button:first-of-type {
     border-radius: 0 3px 3px 0;
 }
-
+.feeder-data-control .map-overlay,
 .map-data-control .map-overlay,
 .background-control .map-overlay,
 .help-control .map-overlay {

@@ -77,6 +77,11 @@ iD.Connection = function(useHttps) {
             });
     };
 
+    connection.loadUserFeeders = function(id, callback) {
+        d3.xml(url + '/api/0.6/feeders?user_id='+id).get()
+            .on('load', callback);
+    };
+
     connection.loadMultiple = function(ids, callback) {
         _.each(_.groupBy(_.uniq(ids), iD.Entity.id.type), function(v, k) {
             var type = k + 's',
@@ -152,7 +157,8 @@ iD.Connection = function(useHttps) {
                 //version: attrs.version.value,
                 //user: attrs.user && attrs.user.value,
                 tags: getTags(obj),
-                visible: getVisible(attrs)
+                visible: getVisible(attrs),
+                version: 1
             });
         },
 
@@ -164,7 +170,8 @@ iD.Connection = function(useHttps) {
                 //user: attrs.user && attrs.user.value,
                 tags: getTags(obj),
                 nodes: getNodes(obj),
-                visible: getVisible(attrs)
+                visible: getVisible(attrs),
+                version: 1
             });
         },
 
@@ -176,7 +183,8 @@ iD.Connection = function(useHttps) {
                 //user: attrs.user && attrs.user.value,
                 tags: getTags(obj),
                 members: getMembers(obj),
-                visible: getVisible(attrs)
+                visible: getVisible(attrs),
+                version: 1
             });
         }
     };

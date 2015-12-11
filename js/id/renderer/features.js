@@ -165,6 +165,10 @@ iD.Features = function(context) {
 
     function features() {}
 
+    features.define = function (k, filter, max) {
+        defineFeature(k, filter, max);
+    };
+
     features.features = function() {
         return _features;
     };

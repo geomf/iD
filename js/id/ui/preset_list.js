@@ -199,6 +199,7 @@ iD.ui.PresetList = function(context) {
 
         item.choose = function() {
             context.presets().choose(preset);
+            preset.tags["feeder_id"] = context['feeder_id'];
 
             context.perform(
                 iD.actions.ChangePreset(id, currentPreset, preset),
