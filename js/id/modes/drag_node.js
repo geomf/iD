@@ -119,13 +119,7 @@ iD.modes.DragNode = function(context) {
 
         var d = datum();
 
-        if (d.type === 'way') {
-            var choice = iD.geo.chooseEdge(context.childNodes(d), context.mouse(), context.projection);
-            context.replace(
-                iD.actions.AddMidpoint({ loc: choice.loc, edge: [d.nodes[choice.index - 1], d.nodes[choice.index]] }, entity),
-                connectAnnotation(d));
-
-        } else if (d.type === 'node' && d.id !== entity.id) {
+        if (d.type === 'node' && d.id !== entity.id) {
             context.replace(
                 iD.actions.Connect([d.id, entity.id]),
                 connectAnnotation(d));

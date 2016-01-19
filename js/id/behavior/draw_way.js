@@ -53,7 +53,7 @@ iD.behavior.DrawWay = function(context, wayId, index, mode, baseGraph) {
     var drawWay = function(surface) {
         draw.on('move', move)
             .on('click', drawWay.add)
-            .on('clickWay', drawWay.addWay)
+            .on('clickWay', drawWay.add)
             .on('clickNode', drawWay.addNode)
             .on('undo', context.undo)
             .on('cancel', drawWay.cancel)
@@ -105,7 +105,6 @@ iD.behavior.DrawWay = function(context, wayId, index, mode, baseGraph) {
 
     // Accept the current position of the temporary node and continue drawing.
     drawWay.add = function(loc) {
-
         // prevent duplicate nodes
         var last = context.hasEntity(way.nodes[way.nodes.length - (isArea ? 2 : 1)]);
         if (last && last.loc[0] === loc[0] && last.loc[1] === loc[1]) return;
@@ -118,28 +117,10 @@ iD.behavior.DrawWay = function(context, wayId, index, mode, baseGraph) {
             annotation);
 
         finished = true;
-        context.enter(mode);
-    };
-
-    // Connect the way to an existing way.
-    drawWay.addWay = function(loc, edge) {
-        var previousEdge = startIndex ?
-            [way.nodes[startIndex], way.nodes[startIndex - 1]] :
-            [way.nodes[0], way.nodes[1]];
-
-        // Avoid creating duplicate segments
-        if (!isArea && iD.geo.edgeEqual(edge, previousEdge))
-            return;
-
-        var newNode = iD.Node({ loc: loc });
-
-        context.perform(
-            iD.actions.AddMidpoint({ loc: loc, edge: edge}, newNode),
-            ReplaceTemporaryNode(newNode),
-            annotation);
-
-        finished = true;
-        context.enter(mode);
+        context.enter(
+            iD.modes.Select(context, [wayId])
+                .suppressMenu(true)
+                .newFeature(true));
     };
 
     // Connect the way to an existing node and continue drawing.
@@ -153,7 +134,10 @@ iD.behavior.DrawWay = function(context, wayId, index, mode, baseGraph) {
             annotation);
 
         finished = true;
-        context.enter(mode);
+        context.enter(
+            iD.modes.Select(context, [wayId])
+                .suppressMenu(true)
+                .newFeature(true));
     };
 
     // Finish the draw operation, removing the temporary node. If the way has enough

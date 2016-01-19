@@ -34,8 +34,7 @@ iD.modes.AddLine = function(context) {
         context.perform(
             iD.actions.AddEntity(node),
             iD.actions.AddEntity(way),
-            iD.actions.AddVertex(way.id, node.id),
-            iD.actions.AddMidpoint({ loc: loc, edge: edge }, node));
+            iD.actions.AddVertex(way.id, node.id));
 
         context.enter(iD.modes.DrawLine(context, way.id, graph));
     }

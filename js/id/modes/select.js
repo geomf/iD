@@ -105,26 +105,6 @@ iD.modes.Select = function(context, selectedIDs) {
             }
         }
 
-        function dblclick() {
-            var target = d3.select(d3.event.target),
-                datum = target.datum();
-
-            if (datum instanceof iD.Way && !target.classed('fill')) {
-                var choice = iD.geo.chooseEdge(context.childNodes(datum), context.mouse(), context.projection),
-                    node = iD.Node();
-
-                var prev = datum.nodes[choice.index - 1],
-                    next = datum.nodes[choice.index];
-
-                context.perform(
-                    iD.actions.AddMidpoint({loc: choice.loc, edge: [prev, next]}, node),
-                    t('operations.add.annotation.vertex'));
-
-                d3.event.preventDefault();
-                d3.event.stopPropagation();
-            }
-        }
-
         function selectElements(drawn) {
             var entity = singular();
             if (entity && context.geometry(entity.id) === 'relation') {
@@ -200,7 +180,7 @@ iD.modes.Select = function(context, selectedIDs) {
             }
 
             context.surface()
-                .on('dblclick.select', dblclick);
+                .on('dblclick.select', null);
         }, 200);
 
         if (selectedIDs.length > 1) {
