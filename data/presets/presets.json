@@ -6871,201 +6871,13 @@
         ],
         "matchScore": 0.1
     },
-    "power": {
+    "child_point": {
+        "name": "Child point",
+        "tags": {},
         "geometry": [
-            "point",
-            "vertex",
-            "line",
-            "area"
+            "child_point"
         ],
-        "tags": {
-            "power": "*"
-        },
-        "fields": [
-            "power"
-        ],
-        "searchable": false,
-        "name": "Power"
-    },
-    "power/fuse": {
-        "fields": [
-            "power/phases",
-            "power/currnet_limit"
-        ],
-        "geometry": [
-            "line"
-        ],
-        "tags": {
-            "power": "fuse"
-        },
-        "name": "Fuse"
-    },
-    "power/transformer": {
-        "fields": [
-            "power/phases"
-        ],
-        "geometry": [
-            "line"
-        ],
-        "tags": {
-            "power": "transformer"
-        },
-        "name": "Transformer"
-    },
-    "power/regulator": {
-        "geometry": [
-            "line"
-        ],
-        "tags": {
-            "power": "regulator"
-        },
-        "name": "Regulator"
-    },
-    "power/switch": {
-        "geometry": [
-            "line"
-        ],
-        "tags": {
-            "power": "switch"
-        },
-        "name": "Switch"
-    },
-    "power/overhead_line": {
-        "fields": [
-            "power/phases",
-            "power/length"
-        ],
-        "geometry": [
-            "line"
-        ],
-        "tags": {
-            "power": "overhead_line"
-        },
-        "name": "Overhead Line"
-    },
-    "power/underground_line": {
-        "fields": [
-            "power/phases",
-            "power/length"
-        ],
-        "geometry": [
-            "line"
-        ],
-        "tags": {
-            "power": "underground_line"
-        },
-        "name": "Underground Line"
-    },
-    "power/triplex_node": {
-        "fields": [
-            "power/phases",
-            "power/nominal_voltage"
-        ],
-        "geometry": [
-            "point",
-            "vertex"
-        ],
-        "tags": {
-            "power": "triplex_node"
-        },
-        "name": "Triplex Node"
-    },
-    "power/node": {
-        "fields": [
-            "power/phases",
-            "power/nominal_voltage"
-        ],
-        "geometry": [
-            "point",
-            "vertex"
-        ],
-        "tags": {
-            "power": "node"
-        },
-        "name": "Node"
-    },
-    "power/triplex_meter": {
-        "fields": [
-            "power/phases",
-            "power/nominal_voltage"
-        ],
-        "geometry": [
-            "point",
-            "vertex"
-        ],
-        "tags": {
-            "power": "triplex_meter"
-        },
-        "name": "Triplex Meter"
-    },
-    "power/line": {
-        "geometry": [
-            "line"
-        ],
-        "tags": {
-            "power": "line"
-        },
-        "name": "Power Line",
-        "icon": "power-line"
-    },
-    "power/minor_line": {
-        "geometry": [
-            "line"
-        ],
-        "tags": {
-            "power": "minor_line"
-        },
-        "name": "Minor Power Line zxcvb",
-        "icon": "power-line"
-    },
-    "power/pole": {
-        "geometry": [
-            "vertex"
-        ],
-        "tags": {
-            "power": "pole"
-        },
-        "name": "Power Pole"
-    },
-    "power/sub_station": {
-        "fields": [
-            "substation",
-            "operator",
-            "building"
-        ],
-        "geometry": [
-            "point",
-            "area"
-        ],
-        "tags": {
-            "power": "sub_station"
-        },
-        "name": "Substation",
-        "searchable": false
-    },
-    "power/substation": {
-        "fields": [
-            "substation",
-            "operator",
-            "building"
-        ],
-        "geometry": [
-            "point",
-            "area"
-        ],
-        "tags": {
-            "power": "substation"
-        },
-        "name": "Substation"
-    },
-    "power/tower": {
-        "geometry": [
-            "vertex"
-        ],
-        "tags": {
-            "power": "tower"
-        },
-        "name": "High-Voltage Tower"
+        "matchScore": 0.1
     },
     "public_transport/platform": {
         "fields": [
@@ -38895,5 +38707,344 @@
             "opening_hours"
         ],
         "suggestion": true
+    },
+    "power": {
+        "geometry": [
+            "point",
+            "vertex",
+            "line",
+            "area"
+        ],
+        "tags": {
+            "power": "*"
+        },
+        "fields": [
+            "power"
+        ],
+        "searchable": false,
+        "name": "Power"
+    },
+    "power/fuse": {
+        "fields": [
+            "power/phases",
+            "power/currnet_limit"
+        ],
+        "geometry": [
+            "line"
+        ],
+        "tags": {
+            "power": "fuse"
+        },
+        "name": "Fuse"
+    },
+    "power/transformer": {
+        "fields": [
+            "power/phases"
+        ],
+        "geometry": [
+            "line"
+        ],
+        "tags": {
+            "power": "transformer"
+        },
+        "name": "Transformer"
+    },
+    "power/regulator": {
+        "fields": [
+            "power/phases"
+        ],
+        "geometry": [
+            "line"
+        ],
+        "tags": {
+            "power": "regulator"
+        },
+        "name": "Regulator"
+    },
+    "power/switch": {
+        "fields": [
+            "power/phases",
+            "power/status"
+        ],
+        "geometry": [
+            "line"
+        ],
+        "tags": {
+            "power": "switch"
+        },
+        "name": "Switch"
+    },
+    "power/overhead_line": {
+        "fields": [
+            "power/phases",
+            "power/length"
+        ],
+        "geometry": [
+            "line"
+        ],
+        "tags": {
+            "power": "overhead_line"
+        },
+        "name": "Overhead Line"
+    },
+    "power/underground_line": {
+        "fields": [
+            "power/phases",
+            "power/length"
+        ],
+        "geometry": [
+            "line"
+        ],
+        "tags": {
+            "power": "underground_line"
+        },
+        "name": "Underground Line"
+    },
+    "power/node": {
+        "fields": [
+            "power/phases",
+            "power/nominal_voltage",
+            "power/bustype"
+        ],
+        "geometry": [
+            "point",
+            "vertex"
+        ],
+        "tags": {
+            "power": "node"
+        },
+        "name": "Node"
+    },
+    "power/triplex_meter": {
+        "fields": [
+            "power/phases",
+            "power/nominal_voltage"
+        ],
+        "geometry": [
+            "point",
+            "vertex"
+        ],
+        "tags": {
+            "power": "triplex_meter"
+        },
+        "name": "Triplex Meter"
+    },
+    "power/triplex_node": {
+        "fields": [
+            "power/phases",
+            "power/nominal_voltage",
+            "power/power_12"
+        ],
+        "geometry": [
+            "child_point"
+        ],
+        "tags": {
+            "power": "triplex_node"
+        },
+        "name": "Triplex Node"
+    },
+    "power/load": {
+        "fields": [
+            "power/phases",
+            "power/nominal_voltage",
+            "power/load_class",
+            "power/constant_power_C",
+            "power/constant_power_B",
+            "power/constant_power_A"
+        ],
+        "geometry": [
+            "child_point"
+        ],
+        "tags": {
+            "power": "load"
+        },
+        "name": "Load"
+    },
+    "power/capacitor": {
+        "fields": [
+            "power/phases",
+            "power/control",
+            "power/capacitor_A",
+            "power/control_level",
+            "power/capacitor_B",
+            "power/phases_connected",
+            "power/switchC",
+            "power/nominal_voltage",
+            "power/capacitor_C",
+            "power/switchB",
+            "power/switchA",
+            "power/pt_phase"
+        ],
+        "geometry": [
+            "child_point"
+        ],
+        "tags": {
+            "power": "capacitor"
+        },
+        "name": "Capacitor"
+    },
+    "power/zip_load": {
+        "fields": [
+            "power/schedule_skew",
+            "power/power_fraction",
+            "power/current_fraction",
+            "power/base_power",
+            "power/current_pf",
+            "power/power_pf",
+            "power/heatgain_fraction",
+            "power/impedance_fraction",
+            "power/impedance_pf"
+        ],
+        "geometry": [
+            "child_point"
+        ],
+        "tags": {
+            "power": "zip_load"
+        },
+        "name": "ZIP Load"
+    },
+    "power/water_heater": {
+        "fields": [
+            "power/schedule_skew",
+            "power/tank_volume",
+            "power/location",
+            "power/thermostat_deadband",
+            "power/heating_element_capacity",
+            "power/demand",
+            "power/temperature",
+            "power/tank_setpoint",
+            "power/tank_UA"
+        ],
+        "geometry": [
+            "child_point"
+        ],
+        "tags": {
+            "power": "water_heater"
+        },
+        "name": "Water Heater"
+    },
+    "power/house": {
+        "fields": [
+            "power/schedule_skew",
+            "power/floor_area",
+            "power/cooling_COP",
+            "power/cooling_system_type",
+            "power/heating_setpoint",
+            "power/cooling_setpoint",
+            "power/air_temperature",
+            "power/thermal_integrity_level",
+            "power/heating_COP",
+            "power/mass_temperature",
+            "power/heating_system_type"
+        ],
+        "geometry": [
+            "child_point"
+        ],
+        "tags": {
+            "power": "house"
+        },
+        "name": "House"
+    },
+    "power/meter": {
+        "fields": [
+            "power/phases",
+            "power/nominal_voltage"
+        ],
+        "geometry": [
+            "child_point"
+        ],
+        "tags": {
+            "power": "meter"
+        },
+        "name": "Meter"
+    },
+    "power/battery": {
+        "fields": [
+            "power/power_factor",
+            "power/base_efficiency",
+            "power/generator_status",
+            "power/Energy",
+            "power/power_type",
+            "power/V_Max",
+            "power/generator_mode",
+            "power/scheduled_power",
+            "power/parasitic_power_draw",
+            "power/I_Max",
+            "power/P_Max",
+            "power/E_Max"
+        ],
+        "geometry": [
+            "child_point"
+        ],
+        "tags": {
+            "power": "battery"
+        },
+        "name": "Battery"
+    },
+    "power/solar": {
+        "fields": [
+            "power/generator_mode",
+            "power/area",
+            "power/generator_status",
+            "power/efficiency",
+            "power/panel_type"
+        ],
+        "geometry": [
+            "child_point"
+        ],
+        "tags": {
+            "power": "solar"
+        },
+        "name": "Solar"
+    },
+    "power/inverter": {
+        "fields": [
+            "power/phases",
+            "power/inverter_type",
+            "power/generator_status",
+            "power/power_factor",
+            "power/generator_mode"
+        ],
+        "geometry": [
+            "child_point"
+        ],
+        "tags": {
+            "power": "inverter"
+        },
+        "name": "Inverter"
+    },
+    "power/wind_turb_dg": {
+        "fields": [
+            "power/phases",
+            "power/Gen_status",
+            "power/Turbine_Model",
+            "power/Gen_mode",
+            "power/Gen_type"
+        ],
+        "geometry": [
+            "child_point"
+        ],
+        "tags": {
+            "power": "wind_turb_dg"
+        },
+        "name": "Wind Turb DG"
+    },
+    "power/triplex_load": {
+        "fields": [
+            "power/impedance_pf_12",
+            "power/phases",
+            "power/nominal_voltage",
+            "power/power_pf_12",
+            "power/power_fraction_12",
+            "power/impedance_fraction_12",
+            "power/base_power_12"
+        ],
+        "geometry": [
+            "child_point"
+        ],
+        "tags": {
+            "power": "triplex_load"
+        },
+        "name": "Triplex Load"
     }
 }

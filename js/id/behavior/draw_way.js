@@ -117,10 +117,17 @@ iD.behavior.DrawWay = function(context, wayId, index, mode, baseGraph) {
             annotation);
 
         finished = true;
-        context.enter(
-            iD.modes.Select(context, [wayId])
-                .suppressMenu(true)
-                .newFeature(true));
+        if(way.tags.hasOwnProperty("power:child_line") && way.tags["power:child_line"] === "True") {
+            context.enter(
+                iD.modes.Select(context, [newNode.id])
+                    .suppressMenu(true)
+                    .newFeature(true));
+        } else {
+            context.enter(
+                iD.modes.Select(context, [wayId])
+                    .suppressMenu(true)
+                    .newFeature(true));
+        }
     };
 
     // Connect the way to an existing node and continue drawing.

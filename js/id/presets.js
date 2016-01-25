@@ -4,7 +4,7 @@ iD.presets = function() {
     // loading new data and returning defaults
 
     var all = iD.presets.Collection([]),
-        defaults = { area: all, line: all, point: all, vertex: all, relation: all },
+        defaults = { area: all, line: all, point: all, vertex: all, relation: all, child_point: all },
         fields = {},
         universal = [],
         recent = iD.presets.Collection([]);
@@ -15,7 +15,8 @@ iD.presets = function() {
         vertex: {},
         line: {},
         area: {},
-        relation: {}
+        relation: {},
+        child_point: {}
     };
 
     all.match = function(entity, resolver) {
@@ -110,14 +111,14 @@ iD.presets = function() {
                 line: iD.presets.Collection(d.defaults.line.map(getItem)),
                 point: iD.presets.Collection(d.defaults.point.map(getItem)),
                 vertex: iD.presets.Collection(d.defaults.vertex.map(getItem)),
-                relation: iD.presets.Collection(d.defaults.relation.map(getItem))
+                relation: iD.presets.Collection(d.defaults.relation.map(getItem)),
+                child_point: iD.presets.Collection(d.defaults.child_point.map(getItem))
             };
         }
 
         for (var i = 0; i < all.collection.length; i++) {
             var preset = all.collection[i],
                 geometry = preset.geometry;
-
             for (var j = 0; j < geometry.length; j++) {
                 var g = index[geometry[j]];
                 for (var k in preset.tags) {

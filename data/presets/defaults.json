@@ -18,12 +18,10 @@
         "power/underground_line"
     ],
     "point": [
-        "power/triplex_node",
         "power/node",
         "power/triplex_meter"
     ],
     "vertex": [
-        "power/triplex_node",
         "power/node",
         "power/triplex_meter"
     ],
@@ -33,5 +31,19 @@
         "type/boundary",
         "type/multipolygon",
         "relation"
+    ],
+    "child_point": [
+        "power/triplex_node",
+        "power/load",
+        "power/capacitor",
+        "power/zip_load",
+        "power/water_heater",
+        "power/house",
+        "power/meter",
+        "power/battery",
+        "power/solar",
+        "power/inverter",
+        "power/wind_turb_dg",
+        "power/triplex_load"
     ]
 }

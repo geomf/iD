@@ -3,7 +3,8 @@
         "point",
         "vertex",
         "line",
-        "area"
+        "area",
+        "child_point"
     ],
     "tags": {
         "power": "*"

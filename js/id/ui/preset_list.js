@@ -95,7 +95,10 @@ iD.ui.PresetList = function(context) {
 
         var listWrap = selection.append('div')
             .attr('class', 'inspector-body');
-
+        var way = context.graph().parentWays(context.entity(id))[0];
+        if(way && way.tags.hasOwnProperty("power:child_line") && way.tags["power:child_line"] === "True") {
+            geometry = "child_point";
+        }
         var list = listWrap.append('div')
             .attr('class', 'preset-list fillL cf')
             .call(drawList, context.presets().defaults(geometry, 36));
@@ -105,7 +108,6 @@ iD.ui.PresetList = function(context) {
         var collection = presets.collection.map(function(preset) {
             return preset.members ? CategoryItem(preset) : PresetItem(preset);
         });
-
         var items = list.selectAll('.preset-list-item')
             .data(collection, function(d) { return d.preset.id; });
 
@@ -201,10 +203,17 @@ iD.ui.PresetList = function(context) {
             context.presets().choose(preset);
             preset.tags["feeder_id"] = context['feeder_id'];
 
+            var way = context.graph().parentWays(context.entity(id))[0];
+            if(way && way.tags.hasOwnProperty("power:child_line") && way.tags["power:child_line"] === "True") {
+                context.perform(
+                    iD.actions.ChangeTags(way.id, {
+                        "power:child_line": "True",
+                        power: preset.tags.power + "_connection"
+                    }));
+            }
             context.perform(
                 iD.actions.ChangePreset(id, currentPreset, preset),
                 t('operations.change_tags.annotation'));
-
             event.choose(preset);
         };
 

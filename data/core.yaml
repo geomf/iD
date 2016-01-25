@@ -32,7 +32,7 @@ en:
     continue:
       key: A
       title: Continue
-      description: Continue this line.
+      description: Add child line.
       not_eligible: No line can be continued here.
       multiple: Several lines can be continued here. To choose a line, press the Shift key and click on it to select it.
       annotation:

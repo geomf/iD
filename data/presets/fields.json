@@ -959,36 +959,6 @@
         "type": "text",
         "label": "Population"
     },
-    "power": {
-        "key": "power",
-        "type": "typeCombo",
-        "label": "Type"
-    },
-    "power_supply": {
-        "key": "power_supply",
-        "type": "check",
-        "label": "Power Supply"
-    },
-    "power/phases": {
-        "key": "power:phases",
-        "type": "text",
-        "label": "Phases"
-    },
-    "power/currnet_limit": {
-        "key": "power:currnet_limit",
-        "type": "text",
-        "label": "Currnet Limit"
-    },
-    "power/length": {
-        "key": "power:length",
-        "type": "text",
-        "label": "Length"
-    },
-    "power/nominal_voltage": {
-        "key": "power:nominal_voltage",
-        "type": "text",
-        "label": "Nominal Voltage"
-    },
     "railway": {
         "key": "railway",
         "type": "typeCombo",
@@ -1452,5 +1422,380 @@
         "icon": "wikipedia",
         "universal": true,
         "label": "Wikipedia"
+    },
+    "power": {
+        "key": "power",
+        "type": "typeCombo",
+        "label": "Type"
+    },
+    "power_supply": {
+        "key": "power_supply",
+        "type": "check",
+        "label": "Power Supply"
+    },
+    "power/phases": {
+        "key": "power:phases",
+        "type": "text",
+        "label": "Phases"
+    },
+    "power/currnet_limit": {
+        "key": "power:currnet_limit",
+        "type": "text",
+        "label": "Currnet Limit"
+    },
+    "power/length": {
+        "key": "power:length",
+        "type": "text",
+        "label": "Length"
+    },
+    "power/nominal_voltage": {
+        "key": "power:nominal_voltage",
+        "type": "text",
+        "label": "Nominal Voltage"
+    },
+    "power/status": {
+        "key": "power:status",
+        "type": "text",
+        "label": "Status"
+    },
+    "power/bustype": {
+        "key": "power:bustype",
+        "type": "text",
+        "label": "Bus Type"
+    },
+    "power/power_12": {
+        "key": "power:power_12",
+        "type": "text",
+        "label": "Power 12"
+    },
+    "power/load_class": {
+        "key": "power:load_class",
+        "type": "text",
+        "label": "Load Class"
+    },
+    "power/constant_power_C": {
+        "key": "power:constant_power_C",
+        "type": "text",
+        "label": "Constant Power C"
+    },
+    "power/constant_power_B": {
+        "key": "power:constant_power_B",
+        "type": "text",
+        "label": "Constant Power B"
+    },
+    "power/constant_power_A": {
+        "key": "power:constant_power_A",
+        "type": "text",
+        "label": "Constant Power A"
+    },
+    "power/control": {
+        "key": "power:control",
+        "type": "text",
+        "label": "Control"
+    },
+    "power/capacitor_A": {
+        "key": "power:capacitor_A",
+        "type": "text",
+        "label": "default"
+    },
+    "power/control_level": {
+        "key": "power:control_level",
+        "type": "text",
+        "label": "Control Level"
+    },
+    "power/capacitor_B": {
+        "key": "power:capacitor_B",
+        "type": "text",
+        "label": "Capacitor B"
+    },
+    "power/phases_connected": {
+        "key": "power:phases_connected",
+        "type": "text",
+        "label": "Phases Connected"
+    },
+    "power/switchC": {
+        "key": "power:switchC",
+        "type": "text",
+        "label": "Switch C"
+    },
+    "power/capacitor_C": {
+        "key": "power:capacitor_C",
+        "type": "text",
+        "label": "Capacitor C"
+    },
+    "power/switchB": {
+        "key": "power:switchB",
+        "type": "text",
+        "label": "Switch B"
+    },
+    "power/switchA": {
+        "key": "power:switchA",
+        "type": "text",
+        "label": "Switch A"
+    },
+    "power/pt_phase": {
+        "key": "power:pt_phase",
+        "type": "text",
+        "label": "PT Phase"
+    },
+    "power/schedule_skew": {
+        "key": "power:schedule_skew",
+        "type": "text",
+        "label": "Schedule Skew"
+    },
+    "power/power_fraction": {
+        "key": "power:power_fraction",
+        "type": "text",
+        "label": "Power Fraction"
+    },
+    "power/current_fraction": {
+        "key": "power:current_fraction",
+        "type": "text",
+        "label": "Current Fraction"
+    },
+    "power/base_power": {
+        "key": "power:base_power",
+        "type": "text",
+        "label": "Base Power"
+    },
+    "power/current_pf": {
+        "key": "power:current_pf",
+        "type": "text",
+        "label": "Current PF"
+    },
+    "power/power_pf": {
+        "key": "power:power_pf",
+        "type": "text",
+        "label": "Power PF"
+    },
+    "power/heatgain_fraction": {
+        "key": "power:heatgain_fraction",
+        "type": "text",
+        "label": "Heat Gain Fraction"
+    },
+    "power/impedance_fraction": {
+        "key": "power:impedance_fraction",
+        "type": "text",
+        "label": "Impedance Fraction"
+    },
+    "power/impedance_pf": {
+        "key": "power:impedance_pf",
+        "type": "text",
+        "label": "Impedance PF"
+    },
+    "power/tank_volume": {
+        "key": "power:tank_volume",
+        "type": "text",
+        "label": "Tank Volume"
+    },
+    "power/location": {
+        "key": "power:location",
+        "type": "text",
+        "label": "Location"
+    },
+    "power/thermostat_deadband": {
+        "key": "power:thermostat_deadband",
+        "type": "text",
+        "label": "Thermostat Deadband"
+    },
+    "power/heating_element_capacity": {
+        "key": "power:heating_element_capacity",
+        "type": "text",
+        "label": "Heating Element Capacity"
+    },
+    "power/demand": {
+        "key": "power:demand",
+        "type": "text",
+        "label": "Demand"
+    },
+    "power/temperature": {
+        "key": "power:temperature",
+        "type": "text",
+        "label": "Temperature"
+    },
+    "power/tank_setpoint": {
+        "key": "power:tank_setpoint",
+        "type": "text",
+        "label": "Tank Setpoint"
+    },
+    "power/tank_UA": {
+        "key": "power:tank_UA",
+        "type": "text",
+        "label": "Tank UA"
+    },
+    "power/floor_area": {
+        "key": "power:floor_area",
+        "type": "text",
+        "label": "Floor Area"
+    },
+    "power/cooling_COP": {
+        "key": "power:cooling_COP",
+        "type": "text",
+        "label": "Cooling COP"
+    },
+    "power/cooling_system_type": {
+        "key": "power:cooling_system_type",
+        "type": "text",
+        "label": "Cooling System Type"
+    },
+    "power/heating_setpoint": {
+        "key": "power:heating_setpoint",
+        "type": "text",
+        "label": "Heating Setpoint"
+    },
+    "power/cooling_setpoint": {
+        "key": "power:cooling_setpoint",
+        "type": "text",
+        "label": "Cooling Setpoint"
+    },
+    "power/air_temperature": {
+        "key": "power:air_temperature",
+        "type": "text",
+        "label": "Air Temperature"
+    },
+    "power/thermal_integrity_level": {
+        "key": "power:thermal_integrity_level",
+        "type": "text",
+        "label": "Thermal Integrity Level"
+    },
+    "power/heating_COP": {
+        "key": "power:heating_COP",
+        "type": "text",
+        "label": "Heating COP"
+    },
+    "power/mass_temperature": {
+        "key": "power:mass_temperature",
+        "type": "text",
+        "label": "Mass Temperature"
+    },
+    "power/heating_system_type": {
+        "key": "power:heating_system_type",
+        "type": "text",
+        "label": "Heating System Type"
+    },
+    "power/power_factor": {
+        "key": "power:power_factor",
+        "type": "text",
+        "label": "Power Factor"
+    },
+    "power/base_efficiency": {
+        "key": "power:base_efficiency",
+        "type": "text",
+        "label": "Base Efficiency"
+    },
+    "power/generator_status": {
+        "key": "power:generator_status",
+        "type": "text",
+        "label": "Generator Status"
+    },
+    "power/Energy": {
+        "key": "power:Energy",
+        "type": "text",
+        "label": "Energy"
+    },
+    "power/power_type": {
+        "key": "power:power_type",
+        "type": "text",
+        "label": "Power Type"
+    },
+    "power/V_Max": {
+        "key": "power:V_Max",
+        "type": "text",
+        "label": "V Max"
+    },
+    "power/generator_mode": {
+        "key": "power:generator_mode",
+        "type": "text",
+        "label": "Generator Mode"
+    },
+    "power/scheduled_power": {
+        "key": "power:scheduled_power",
+        "type": "text",
+        "label": "Scheduled Power"
+    },
+    "power/parasitic_power_draw": {
+        "key": "power:parasitic_power_draw",
+        "type": "text",
+        "label": "Parasitic Power Draw"
+    },
+    "power/I_Max": {
+        "key": "power:I_Max",
+        "type": "text",
+        "label": "I Max"
+    },
+    "power/P_Max": {
+        "key": "power:P_Max",
+        "type": "text",
+        "label": "P Max"
+    },
+    "power/E_Max": {
+        "key": "power:E_Max",
+        "type": "text",
+        "label": "E Max"
+    },
+    "power/area": {
+        "key": "power:area",
+        "type": "text",
+        "label": "Area"
+    },
+    "power/efficiency": {
+        "key": "power:efficiency",
+        "type": "text",
+        "label": "Efficiency"
+    },
+    "power/panel_type": {
+        "key": "power:panel_type",
+        "type": "text",
+        "label": "Panel Type"
+    },
+    "power/inverter_type": {
+        "key": "power:inverter_type",
+        "type": "text",
+        "label": "Inverter Type"
+    },
+    "power/Gen_status": {
+        "key": "power:Gen_status",
+        "type": "text",
+        "label": "Gen Status"
+    },
+    "power/Turbine_Model": {
+        "key": "power:Turbine_Model",
+        "type": "text",
+        "label": "Turbine Model"
+    },
+    "power/Gen_mode": {
+        "key": "power:Gen_mode",
+        "type": "text",
+        "label": "Gen Mode"
+    },
+    "power/Gen_type": {
+        "key": "power:Gen_type",
+        "type": "text",
+        "label": "Gen Type"
+    },
+    "power/impedance_pf_12": {
+        "key": "power:impedance_pf_12",
+        "type": "text",
+        "label": "Impedance PF 12"
+    },
+    "power/power_pf_12": {
+        "key": "power:power_pf_12",
+        "type": "text",
+        "label": "Power PF 12"
+    },
+    "power/power_fraction_12": {
+        "key": "power:power_fraction_12",
+        "type": "text",
+        "label": "Power Fraction 12"
+    },
+    "power/impedance_fraction_12": {
+        "key": "power:impedance_fraction_12",
+        "type": "text",
+        "label": "Impedance Fraction 12"
+    },
+    "power/base_power_12": {
+        "key": "power:base_power_12",
+        "type": "text",
+        "label": "Base Power 12"
     }
 }

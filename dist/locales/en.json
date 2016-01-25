@@ -1208,24 +1208,6 @@
             "population": {
                 "label": "Population"
             },
-            "power": {
-                "label": "Type"
-            },
-            "power_supply": {
-                "label": "Power Supply"
-            },
-            "power/phases": {
-                "label": "Phases"
-            },
-            "power/currnet_limit": {
-                "label": "Currnet Limit"
-            },
-            "power/length": {
-                "label": "Length"
-            },
-            "power/nominal_voltage": {
-                "label": "Nominal Voltage"
-            },
             "railway": {
                 "label": "Type"
             },
@@ -3107,70 +3089,6 @@
                 "name": "Point",
                 "terms": ""
             },
-            "power": {
-                "name": "Power",
-                "terms": ""
-            },
-            "power/fuse": {
-                "name": "Fuse",
-                "terms": ""
-            },
-            "power/transformer": {
-                "name": "Transformer",
-                "terms": ""
-            },
-            "power/regulator": {
-                "name": "Regulator",
-                "terms": ""
-            },
-            "power/switch": {
-                "name": "Switch",
-                "terms": ""
-            },
-            "power/overhead_line": {
-                "name": "Overhead Line",
-                "terms": ""
-            },
-            "power/underground_line": {
-                "name": "Underground Line",
-                "terms": ""
-            },
-            "power/triplex_node": {
-                "name": "Triplex Node",
-                "terms": ""
-            },
-            "power/node": {
-                "name": "Node",
-                "terms": ""
-            },
-            "power/triplex_meter": {
-                "name": "Triplex Meter",
-                "terms": ""
-            },
-            "power/line": {
-                "name": "Power Line",
-                "terms": ""
-            },
-            "power/minor_line": {
-                "name": "Minor Power Line",
-                "terms": ""
-            },
-            "power/pole": {
-                "name": "Power Pole",
-                "terms": ""
-            },
-            "power/sub_station": {
-                "name": "Substation",
-                "terms": ""
-            },
-            "power/substation": {
-                "name": "Substation",
-                "terms": ""
-            },
-            "power/tower": {
-                "name": "High-Voltage Tower",
-                "terms": ""
-            },
             "public_transport/platform": {
                 "name": "Platform",
                 "terms": ""
@@ -3910,6 +3828,292 @@
             "waterway/weir": {
                 "name": "Weir",
                 "terms": ""
+            },
+            "power": {
+                "label": "Type",
+                "name": "Power"
+            },
+            "power_supply": {
+                "label": "Power Supply"
+            },
+            "power/phases": {
+                "label": "Phases"
+            },
+            "power/currnet_limit": {
+                "label": "Currnet Limit"
+            },
+            "power/length": {
+                "label": "Length"
+            },
+            "power/nominal_voltage": {
+                "label": "Nominal Voltage"
+            },
+            "power/fuse": {
+                "name": "Fuse",
+                "terms": ""
+            },
+            "power/transformer": {
+                "name": "Transformer",
+                "terms": ""
+            },
+            "power/regulator": {
+                "name": "Regulator",
+                "terms": ""
+            },
+            "power/switch": {
+                "name": "Switch",
+                "terms": ""
+            },
+            "power/overhead_line": {
+                "name": "Overhead Line",
+                "terms": ""
+            },
+            "power/underground_line": {
+                "name": "Underground Line",
+                "terms": ""
+            },
+            "power/triplex_node": {
+                "name": "Triplex Node",
+                "terms": ""
+            },
+            "power/node": {
+                "name": "Node",
+                "terms": ""
+            },
+            "power/triplex_meter": {
+                "name": "Triplex Meter",
+                "terms": ""
+            },
+            "power/line": {
+                "name": "Power Line",
+                "terms": ""
+            },
+            "power/minor_line": {
+                "name": "Minor Power Line",
+                "terms": ""
+            },
+            "power/pole": {
+                "name": "Power Pole",
+                "terms": ""
+            },
+            "power/sub_station": {
+                "name": "Substation",
+                "terms": ""
+            },
+            "power/substation": {
+                "name": "Substation",
+                "terms": ""
+            },
+            "power/tower": {
+                "name": "High-Voltage Tower",
+                "terms": ""
+            },
+            "power/status": {
+                "name": "Status"
+            },
+            "power/bustype": {
+                "name": "Bus Type"
+            },
+            "power/power_12": {
+                "name": "Power 12"
+            },
+            "power/load_class": {
+                "name": "Load Class"
+            },
+            "power/constant_power_C": {
+                "name": "Constant Power C"
+            },
+            "power/constant_power_B": {
+                "name": "Constant Power B"
+            },
+            "power/constant_power_A": {
+                "name": "Constant Power A"
+            },
+            "power/control": {
+                "name": "Control"
+            },
+            "power/capacitor_A": {
+                "name": "default"
+            },
+            "power/control_level": {
+                "name": "Control Level"
+            },
+            "power/capacitor_B": {
+                "name": "Capacitor B"
+            },
+            "power/phases_connected": {
+                "name": "Phases Connected"
+            },
+            "power/switchC": {
+                "name": "Switch C"
+            },
+            "power/capacitor_C": {
+                "name": "Capacitor C"
+            },
+            "power/switchB": {
+                "name": "Switch B"
+            },
+            "power/switchA": {
+                "name": "Switch A"
+            },
+            "power/pt_phase": {
+                "name": "PT Phase"
+            },
+            "power/schedule_skew": {
+                "name": "Schedule Skew"
+            },
+            "power/power_fraction": {
+                "name": "Power Fraction"
+            },
+            "power/current_fraction": {
+                "name": "Current Fraction"
+            },
+            "power/base_power": {
+                "name": "Base Power"
+            },
+            "power/current_pf": {
+                "name": "Current PF"
+            },
+            "power/power_pf": {
+                "name": "Power PF"
+            },
+            "power/heatgain_fraction": {
+                "name": "Heat Gain Fraction"
+            },
+            "power/impedance_fraction": {
+                "name": "Impedance Fraction"
+            },
+            "power/impedance_pf": {
+                "name": "Impedance PF"
+            },
+            "power/tank_volume": {
+                "name": "Tank Volume"
+            },
+            "power/location": {
+                "name": "Location"
+            },
+            "power/thermostat_deadband": {
+                "name": "Thermostat Deadband"
+            },
+            "power/heating_element_capacity": {
+                "name": "Heating Element Capacity"
+            },
+            "power/demand": {
+                "name": "Demand"
+            },
+            "power/temperature": {
+                "name": "Temperature"
+            },
+            "power/tank_setpoint": {
+                "name": "Tank Setpoint"
+            },
+            "power/tank_UA": {
+                "name": "Tank UA"
+            },
+            "power/floor_area": {
+                "name": "Floor Area"
+            },
+            "power/cooling_COP": {
+                "name": "Cooling COP"
+            },
+            "power/cooling_system_type": {
+                "name": "Cooling System Type"
+            },
+            "power/heating_setpoint": {
+                "name": "Heating Setpoint"
+            },
+            "power/cooling_setpoint": {
+                "name": "Cooling Setpoint"
+            },
+            "power/air_temperature": {
+                "name": "Air Temperature"
+            },
+            "power/thermal_integrity_level": {
+                "name": "Thermal Integrity Level"
+            },
+            "power/heating_COP": {
+                "name": "Heating COP"
+            },
+            "power/mass_temperature": {
+                "name": "Mass Temperature"
+            },
+            "power/heating_system_type": {
+                "name": "Heating System Type"
+            },
+            "power/power_factor": {
+                "name": "Power Factor"
+            },
+            "power/base_efficiency": {
+                "name": "Base Efficiency"
+            },
+            "power/generator_status": {
+                "name": "Generator Status"
+            },
+            "power/Energy": {
+                "name": "Energy"
+            },
+            "power/power_type": {
+                "name": "Power Type"
+            },
+            "power/V_Max": {
+                "name": "V Max"
+            },
+            "power/generator_mode": {
+                "name": "Generator Mode"
+            },
+            "power/scheduled_power": {
+                "name": "Scheduled Power"
+            },
+            "power/parasitic_power_draw": {
+                "name": "Parasitic Power Draw"
+            },
+            "power/I_Max": {
+                "name": "I Max"
+            },
+            "power/P_Max": {
+                "name": "P Max"
+            },
+            "power/E_Max": {
+                "name": "E Max"
+            },
+            "power/area": {
+                "name": "Area"
+            },
+            "power/efficiency": {
+                "name": "Efficiency"
+            },
+            "power/panel_type": {
+                "name": "Panel Type"
+            },
+            "power/inverter_type": {
+                "name": "Inverter Type"
+            },
+            "power/Gen_status": {
+                "name": "Gen Status"
+            },
+            "power/Turbine_Model": {
+                "name": "Turbine Model"
+            },
+            "power/Gen_mode": {
+                "name": "Gen Mode"
+            },
+            "power/Gen_type": {
+                "name": "Gen Type"
+            },
+            "power/impedance_pf_12": {
+                "name": "Impedance PF 12"
+            },
+            "power/power_pf_12": {
+                "name": "Power PF 12"
+            },
+            "power/power_fraction_12": {
+                "name": "Power Fraction 12"
+            },
+            "power/impedance_fraction_12": {
+                "name": "Impedance Fraction 12"
+            },
+            "power/base_power_12": {
+                "name": "Base Power 12"
             }
         }
     }

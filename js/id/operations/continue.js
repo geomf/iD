@@ -1,7 +1,7 @@
 iD.operations.Continue = function(selectedIDs, context) {
     var graph = context.graph(),
         entities = selectedIDs.map(function(id) { return graph.entity(id); }),
-        geometries = _.extend({line: [], vertex: []},
+        geometries = _.extend({line: [], vertex: [], child_point: []},
             _.groupBy(entities, function(entity) { return entity.geometry(graph); })),
         vertex = geometries.vertex[0];
 
@@ -14,12 +14,12 @@ iD.operations.Continue = function(selectedIDs, context) {
     }
 
     var operation = function() {
-        var candidate = candidateWays()[0];
-        context.enter(iD.modes.DrawLine(
-            context,
-            candidate.id,
-            context.graph(),
-            candidate.affix(vertex.id)));
+        var way = iD.Way();
+        context.perform(
+            iD.actions.AddEntity(way),
+            iD.actions.AddVertex(way.id, vertex.id),
+            iD.actions.ChangeTags(way.id, {"power:child_line": "True"}));
+        context.enter(iD.modes.DrawLine(context, way.id, graph));
     };
 
     operation.available = function() {
@@ -29,10 +29,6 @@ iD.operations.Continue = function(selectedIDs, context) {
 
     operation.disabled = function() {
         var candidates = candidateWays();
-        if (candidates.length === 0)
-            return 'not_eligible';
-        if (candidates.length > 1)
-            return 'multiple';
     };
 
     operation.tooltip = function() {
