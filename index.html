@@ -253,8 +253,9 @@
             }
             iD.data.load(function() {
                 id = iD()
+                        .loadFeeders(user_id)
                         .presets(iD.data.presets)
-                        .imagery(iD.data.imagery)
+                        .imagery(iD.data.imagery, user_id)
                         .taginfo(iD.taginfo())
                         .assetPath('dist/');
 
