@@ -304,8 +304,8 @@ window.iD = function () {
         return context;
     };
 
-    context.imagery = function(_) {
-        background.load(_);
+    context.imagery = function(_, user_id) {
+        background.load(_, user_id);
         return context;
     };
 

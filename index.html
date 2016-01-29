@@ -247,6 +247,10 @@
     <body>
         <div id='id-container'></div>
         <script>
+            var user_id = getURLParameter('user_id');
+            if(getURLParameter('user_role') === 'admin') {
+                user_id = 0;
+            }
             iD.data.load(function() {
                 id = iD()
                         .presets(iD.data.presets)
@@ -274,6 +278,10 @@
                                 ]));
 
             });
+
+            function getURLParameter(name) {
+                return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+            }
         </script>
 
     </body>

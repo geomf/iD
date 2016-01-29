@@ -4,7 +4,7 @@
         "id": "Feeder",
         "type": "tms",
         "description": "Shows major features to help orient you.",
-        "template": "http://mod-tile-foreground.hutchpcn15.infra-host.com/osm_tiles2/{zoom}/{x}/{y}.png",
+        "template": "http://mod-tile-foreground.hutchpcn15.infra-host.com/osm_tiles2/{user}/{zoom}/{x}/{y}.png",
         "scaleExtent": [
             0,
             16
