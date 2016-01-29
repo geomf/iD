@@ -14,6 +14,7 @@ iD.ui.Feeder = function(context) {
                 context.features().disable(item.id);
             });
             context.features().enable(d.id);
+            context.map().centerZoom([d.lon, d.lat], 12);
             update();
         }
 

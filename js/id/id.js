@@ -105,7 +105,9 @@ window.iD = function () {
                 features.disable(id);
                 return {
                     'id': id,
-                    'name': d.getAttribute('name')
+                    'name': d.getAttribute('name'),
+                    'lat': d.getAttribute('lat'),
+                    'lon': d.getAttribute('lon')
                 }
             });
             if (context.feeders.length > 0) {
