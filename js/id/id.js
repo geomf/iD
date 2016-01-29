@@ -112,6 +112,7 @@ window.iD = function () {
             });
             if (context.feeders.length > 0) {
                 context.features().enable(context.feeders[0].id);
+                context.map().centerZoom([context.feeders[0].lon, context.feeders[0].lat], 12);
             }
             context.feedersUpdate();
         });
