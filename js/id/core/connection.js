@@ -1,17 +1,17 @@
-iD.Connection = function(useHttps) {
+iD.Connection = function(ros_host, useHttps) {
     if (typeof useHttps !== 'boolean') {
       useHttps = window.location.protocol === 'https:';
     }
 
     var event = d3.dispatch('authenticating', 'authenticated', 'auth', 'loading', 'loaded'),
         protocol =  'https:',
-        url = protocol + '//ros.hutchpcn15.infra-host.com',
+        url = ros_host,
         connection = {},
         inflight = {},
         loadedTiles = {},
         tileZoom = 16,
         oauth = osmAuth({
-            url: protocol + '//ros.hutchpcn15.infra-host.com',
+            url: ros_host,
             oauth_consumer_key: '5A043yRSEugj4DJ5TljuapfnrflWDte8jTOcWLlT',
             oauth_secret: 'aB3jKq1TRsCOUrfOIZ6oQMEDmv2ptV76PA54NGLL',
             loading: authenticating,

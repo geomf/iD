@@ -45,7 +45,6 @@ window.iD = function () {
         mode,
         container,
         ui = iD.ui(context),
-        connection = iD.Connection(),
         locale = iD.detect().locale,
         localePath;
 
@@ -310,8 +309,8 @@ window.iD = function () {
         return context;
     };
 
-    context.imagery = function(_, user_id) {
-        background.load(_, user_id);
+    context.imagery = function(_, user_id, mod_tile_bg, mod_tile_fg) {
+        background.load(_, user_id, mod_tile_bg, mod_tile_fg);
         return context;
     };
 
@@ -319,6 +318,11 @@ window.iD = function () {
         if (!arguments.length) return container;
         container = _;
         container.classed('id-container', true);
+        return context;
+    };
+
+    context.loadConnection = function(ros_host) {
+        connection = iD.Connection(ros_host);
         return context;
     };
 

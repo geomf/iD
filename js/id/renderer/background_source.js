@@ -1,4 +1,4 @@
-iD.BackgroundSource = function(data, user_id) {
+iD.BackgroundSource = function(data, user_id, mod_tile_bg, mod_tile_fg) {
     var source = _.clone(data),
         offset = [0, 0],
         name = source.name;
@@ -28,6 +28,8 @@ iD.BackgroundSource = function(data, user_id) {
 
     source.url = function(coord) {
         return data.template
+            .replace('{mod_tile_bg}', mod_tile_bg)
+            .replace('{mod_tile_fg}', mod_tile_fg)
             .replace('{user}', user_id)
             .replace('{x}', coord[0])
             .replace('{y}', coord[1])

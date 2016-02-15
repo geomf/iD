@@ -227,12 +227,12 @@ iD.Background = function(context) {
         return background;
     };
 
-    background.load = function(imagery, user_id) {
+    background.load = function(imagery, user_id, mod_tile_bg, mod_tile_fg) {
         backgroundSources = imagery.map(function(source) {
             if (source.type === 'bing') {
                 return iD.BackgroundSource.Bing(source, dispatch);
             } else {
-                return iD.BackgroundSource(source, user_id);
+                return iD.BackgroundSource(source, user_id, mod_tile_bg, mod_tile_fg);
             }
         });
 
